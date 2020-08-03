@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .data-list-item {
+            background: #fff;
+            width: 590px;
+            height: 262px;
+        }
+
+        .data_Realtime {
+            height: 205px;
+            overflow: hidden;
+        }
+
+        .data-realTime-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.85);
+            height: 50px;
+            /*line-height: 30px;*/
+            /*margin-top: 16px;*/
+        }
+
+        .data-realTime-item .realTime-content {
+            display: inline-block;
+            width: 375px;
+            margin: 0 !important;
+        }
+
+        .data-realTime-item .num {
+            color: rgba(4, 192, 137, 1);
+        }
+
+        .data-realTime-item .time {
+            color: rgba(102, 102, 102, 1);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="data-list-item">
+        <div class="data_Realtime" id="rollBox">
+            <div id="roll1" class="data-realTime-list">
+                <!-- on-finish-render-filters 给元素帮定渲染结束指令  -->
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+            </div>
+
+            <div id="roll2" class="data-realTime-list"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function () {
+        var that = this
+        // 外部容器的高度
+        var containerHeight = 205
+        // 每个 item 的高度，注意 border 和 margin
+        var itemHeight = 50
+        // 每个项目滚动的时间
+        var eachTime = 1
+        var dataRealTime = [{}, {}, ] // 数据内容 
+        // jq 添加 css 动画
+        $('#data-realTime-list').css(
+            'animation',
+            'list-up ' +
+            eachTime * dataRealTime.length +
+            's linear 0s infinite normal'
+        )
+        // js 添加 @keyframs 动画效果，css中没有添加重名 @keyframs，可以不用deleteRule() 删除重名项。
+        var tt = document.styleSheets[0]
+        tt.insertRule(
+            `@keyframes list-up {
+                        0% { transform: translateY(0); }
+                        100% { transform: translateY(-${dataRealTime
+                    .length * itemHeight}px);}
+                    }`,
+            0
+        ) // 写入样式
+        // 无缝衔接重复项，至少需要重复 4 项，具体看 Math.ceil(父容器高度 / (子容器高度 + margin))
+        for (var i = 0; i <= Math.ceil(containerHeight / itemHeight); i++) {
+            dataRealTime.push(dataRealTime[i])
+        }
+    }
+</script>
+
+</html>
