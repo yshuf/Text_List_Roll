@@ -132,19 +132,8 @@
             eachTime * dataRealTime.length +
             's linear 0s infinite normal'
         )
-        //  鼠标进入，动画暂停
         $('#data-realTime-list').mouseenter(function () {
-            $('#data-realTime-list').css(
-                'animation-play-state',
-                'paused'
-            )
-        })
-        //  鼠标进入，动画重新启动
-        $('#data-realTime-list').mouseleave(function () {
-            $('#data-realTime-list').css(
-                'animation-play-state',
-                'running'
-            )
+
         })
         // js 添加 @keyframs 动画效果，css中没有添加重名 @keyframs，可以不用deleteRule() 删除重名项。
         var tt = document.styleSheets[0]

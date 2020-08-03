@@ -132,14 +132,12 @@
             eachTime * dataRealTime.length +
             's linear 0s infinite normal'
         )
-        //  鼠标进入，动画暂停
         $('#data-realTime-list').mouseenter(function () {
             $('#data-realTime-list').css(
                 'animation-play-state',
                 'paused'
             )
         })
-        //  鼠标进入，动画重新启动
         $('#data-realTime-list').mouseleave(function () {
             $('#data-realTime-list').css(
                 'animation-play-state',
