@@ -1,159 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>文字上下无缝滚动</title>
-		<style>
-			.data-list-item {
-				background: #fff;
-				width: 590px;
-				height: 262px;
-			}
 
-			.data_Realtime {
-				height: 205px;
-				overflow: hidden;
-			}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文字上下无缝滚动</title>
+    <style>
+        .data-list-item {
+            background: #fff;
+            width: 590px;
+            height: 262px;
+        }
 
-			.data-realTime-item {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				font-size: 16px;
-				color: rgba(0, 0, 0, 0.85);
-				height: 50px;
-				/*line-height: 30px;*/
-				/*margin-top: 16px;*/
-			}
+        .data_Realtime {
+            height: 205px;
+            overflow: hidden;
+        }
 
-			.data-realTime-item .realTime-content {
-				display: inline-block;
-				width: 375px;
-				margin: 0 !important;
-			}
+        .data-realTime-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.85);
+            height: 50px;
+            /*line-height: 30px;*/
+            /*margin-top: 16px;*/
+        }
 
-			.data-realTime-item .num {
-				color: rgba(4, 192, 137, 1);
-			}
+        .data-realTime-item .realTime-content {
+            display: inline-block;
+            width: 375px;
+            margin: 0 !important;
+        }
 
-			.data-realTime-item .time {
-				color: rgba(102, 102, 102, 1);
-				font-size: 14px;
-			}
-		</style>
-	</head>
+        .data-realTime-item .num {
+            color: rgba(4, 192, 137, 1);
+        }
 
-	<body>
-		<div class="data-list-item">
-			<div class="data_Realtime" id="rollBox">
-				<div id="roll1" class="data-realTime-list">
-					<!-- on-finish-render-filters 给元素帮定渲染结束指令  -->
-					<div class="data-realTime-item">
-						<div style="display: flex;">
-							<p class="realTime-content">
-								浙江有数金融信息有限公司 已获得<span class="num"
-									>200万元</span
-								><span>央行政策贷</span>
-							</p>
-						</div>
-						<div class="time">
-							2020-08-03
-						</div>
-					</div>
-					<div class="data-realTime-item">
-						<div style="display: flex;">
-							<p class="realTime-content">
-								浙江有数金融信息有限公司 已获得<span class="num"
-									>200万元</span
-								><span>央行政策贷</span>
-							</p>
-						</div>
-						<div class="time">
-							2020-08-03
-						</div>
-					</div>
-					<div class="data-realTime-item">
-						<div style="display: flex;">
-							<p class="realTime-content">
-								浙江有数金融信息有限公司 已获得<span class="num"
-									>200万元</span
-								><span>央行政策贷</span>
-							</p>
-						</div>
-						<div class="time">
-							2020-08-03
-						</div>
-					</div>
-					<div class="data-realTime-item">
-						<div style="display: flex;">
-							<p class="realTime-content">
-								浙江有数金融信息有限公司 已获得<span class="num"
-									>200万元</span
-								><span>央行政策贷</span>
-							</p>
-						</div>
-						<div class="time">
-							2020-08-03
-						</div>
-					</div>
-					<div class="data-realTime-item">
-						<div style="display: flex;">
-							<p class="realTime-content">
-								浙江有数金融信息有限公司 已获得<span class="num"
-									>200万元</span
-								><span>央行政策贷</span>
-							</p>
-						</div>
-						<div class="time">
-							2020-08-03
-						</div>
-					</div>
-					<div class="data-realTime-item">
-						<div style="display: flex;">
-							<p class="realTime-content">
-								浙江有数金融信息有限公司 已获得<span class="num"
-									>200万元</span
-								><span>央行政策贷</span>
-							</p>
-						</div>
-						<div class="time">
-							2020-08-03
-						</div>
-					</div>
-				</div>
+        .data-realTime-item .time {
+            color: rgba(102, 102, 102, 1);
+            font-size: 14px;
+        }
+    </style>
+</head>
 
-				<div id="roll2" class="data-realTime-list"></div>
-			</div>
-		</div>
-	</body>
+<body>
+    <div class="data-list-item">
+        <div class="data_Realtime" id="rollBox">
+            <div id="roll1" class="data-realTime-list">
+                <!-- on-finish-render-filters 给元素帮定渲染结束指令  -->
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+                <div class="data-realTime-item">
+                    <div style="display: flex;">
+                        <p class="realTime-content">
+                            浙江有数金融信息有限公司 已获得<span class="num">200万元</span><span>央行政策贷</span>
+                        </p>
+                    </div>
+                    <div class="time">
+                        2020-08-03
+                    </div>
+                </div>
+            </div>
 
-	<script>
-		var setTimeEntList = null
-		window.onload = function () {
-			// 如果不管几条数据都轮播的话，需要在这里获取 data_Realtime （外层容器的高度），轮播的条件（数据项总高度要大于外部容器的高度）
-			var speed = 50
-			clearInterval(setTimeEntList)
-			var rollBox = document.getElementById('rollBox')
-			//  复制一份
-			var roll2 = document.getElementById('roll2')
-			var roll1 = document.getElementById('roll1')
-			roll2.innerHTML = roll1.innerHTML
+            <div id="roll2" class="data-realTime-list"></div>
+        </div>
+    </div>
+</body>
 
-			function Marquee() {
-				if (roll2.offsetHeight - rollBox.scrollTop <= 0)
-					rollBox.scrollTop -= roll1.offsetHeight
-				else {
-					rollBox.scrollTop++
-				}
-			}
-			setTimeEntList = setInterval(Marquee, speed)
-			rollBox.onmouseover = function () {
-				clearInterval(setTimeEntList)
-			}
-			rollBox.onmouseout = function () {
-				setTimeEntList = setInterval(Marquee, speed)
-			}
-		}
-	</script>
+<script>
+    var setTimeEntList = null
+    window.onload = function () {
+        // 如果不管几条数据都轮播的话，需要在这里获取 data_Realtime （外层容器的高度），轮播的条件（数据项总高度要大于外部容器的高度）
+        var speed = 50
+        clearInterval(setTimeEntList)
+        var rollBox = document.getElementById('rollBox')
+        //  复制一份
+        var roll2 = document.getElementById('roll2')
+        var roll1 = document.getElementById('roll1')
+        roll2.innerHTML = roll1.innerHTML
+
+        function Marquee() {
+            if (roll2.offsetHeight - rollBox.scrollTop <= 0)
+                rollBox.scrollTop -= roll1.offsetHeight
+            else {
+                rollBox.scrollTop++
+            }
+        }
+        setTimeEntList = setInterval(Marquee, speed)
+        rollBox.onmouseover = function () {
+            clearInterval(setTimeEntList)
+        }
+        rollBox.onmouseout = function () {
+            setTimeEntList = setInterval(Marquee, speed)
+        }
+    }
+</script>
+
 </html>
