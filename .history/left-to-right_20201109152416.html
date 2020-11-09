@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <style>
+        .signalRankContent {
+            width: 780px;
+            height: 360px;
+            position: relative;
+            padding: 0 0 0 25px;
+        }
+
+        .signalRankContent .slide {
+            position: relative;
+            width: 100%;
+            height: 310px;
+            overflow: hidden;
+        }
+
+        .signalRankContent .slide #slide_box {
+            position: absolute;
+            left: -780px;
+            height: 310px;
+            width: 10000px;
+            list-style-type: none;
+            float: left;
+        }
+
+        .signalRankContent .slide #slide_box li {
+            float: left;
+            width: 780px;
+        }
+
+        .signalRankContent .slide #slide_box li .row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 0 0 20px;
+        }
+
+        .signalRankContent .slide #slide_box li .index {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            border-radius: 50%;
+            background-color: rgba(40, 63, 59, 1);
+            color: #fff;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .signalRankContent .slide #slide_box li .nametxt {
+            width: 300px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .modelPart .signalRankContent .slide #slide_box li .progressbar {
+            width: 250px;
+        }
+
+        .signalRankContent .slide #slide_box li .progressbar .backgroundbar {
+            position: relative;
+            width: 250px;
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.06);
+        }
+
+        .signalRankContent .slide #slide_box .row:nth-child(odd) .progressbar .showbar {
+            position: absolute;
+            top: 0;
+            display: inline-block;
+            height: 10px;
+            background-color: rgba(251, 193, 3, 1);
+        }
+
+        .signalRankContent .slide #slide_box .row:nth-child(even) .progressbar .showbar {
+            position: absolute;
+            top: 0;
+            display: inline-block;
+            height: 10px;
+            background-color: rgba(0, 183, 147, 1);
+        }
+
+        .signalRankContent .slide #slide_box li .num {
+            margin-left: 50px;
+        }
+
+        .signalRankContent #num {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            margin-left: -75px;
+        }
+
+        .signalRankContent #num li {
+            list-style-type: none;
+            background-color: #d8d8d8;
+            float: left;
+            width: 30px;
+            height: 3px;
+            margin: 10px 10px 0 10px;
+            cursor: pointer;
+        }
+
+        .signalRankContent #num li:first-child {
+            background-color: #00B793;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signalRankContent">
+        <div class="slide">
+            <ul id="slide_box">
+                <!-- 起始处为最后一页 -->
+                <li>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="index">1</div>
+                        <div class="nametxt">总行营业部</div>
+                        <div class="progressbar">
+                            <div class="backgroundbar">
+                                <span class="showbar" ng-style="{'width':item.width+'%'}"></span>
+                            </div>
+                        </div>
+                        <div class="num">
+                            12 家
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul id="num">
+            <li ng-repeat="item in config.RankListPage"></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    //  [ {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 6,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "总行营业部",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "安吉支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "开发区支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "城北支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "德清支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "长兴支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "吴兴支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "城南支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "南浔支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "南园支行",
+    //   "totalNum" : null
+    // }, {
+    //   "type" : null,
+    //   "typeName" : null,
+    //   "entName" : null,
+    //   "riskNum" : 0,
+    //   "entNum" : null,
+    //   "date" : null,
+    //   "county" : null,
+    //   "bankName" : null,
+    //   "branchName" : "菱湖支行",
+    //   "totalNum" : null
+    // } ]
+    window.onload = function () {
+        // 轮播图
+        function getLunBoTu() {
+            var number = 1; // 设置为全局变量
+            initRadius();
+
+            // 轮播图图片主体
+            function startSlide() {
+                dealRadius(number);
+                if (number === Math.ceil(12 / 6)) {
+                    number = 0;
+                    $('#slide_box').css({ left: '0px' }); // 处理无缝衔接图
+                    dealRadius(0); // 处理无缝衔接小圆点的跳转
+                }
+                number++;
+                var imageLeft = -780 * number;
+                $('#slide_box').animate({ left: imageLeft });
+            }
+
+            var timer = setInterval(startSlide, 5000);
+
+            // 小圆点的轮播实现
+            function dealRadius(num) {
+                var lis = $('#num li');
+                lis.eq(num).css('background-color', '#00B793');
+                for (var i = 0; i < num; i++) {
+                    lis.eq(i).css('background-color', '#d8d8d8');
+                }
+                for (var j = num + 1; j < 4; j++) {
+                    lis.eq(j).css('background-color', '#d8d8d8');
+                }
+            }
+
+            // 初始化小圆点
+            function initRadius() {
+                var lis = $('#num li');
+                lis.eq(0).css('background-color', '#142952');
+            }
+
+            $('#num').on('click', 'li', function () {
+                clearInterval(timer);
+                var _number = $(this).index() + 1;
+                number = _number;
+                dealRadius(number - 1);
+                var imageLeft = -780 * number;
+                $('#slide_box').animate({ left: imageLeft });
+                timer = setInterval(startSlide, 5000);
+            });
+        }
+
+        // getLunBoTu();
+    }
+</script>
+
+</html>
